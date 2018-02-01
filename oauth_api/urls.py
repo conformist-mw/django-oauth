@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.conf.urls import url, include
 from django.contrib.auth.views import login, logout
+from django.views.generic.base import RedirectView
 from rest_framework import routers
 from api.views import UserViewSet
 from consumer.views import ConsumerView, ConsumerExchangeView, ConsumerDoneView
@@ -11,6 +12,7 @@ router = routers.DefaultRouter()
 router.register(r'users', UserViewSet, base_name='user')
 
 urlpatterns = [
+    url(r'^$', RedirectView.as_view(url='consumer')),
     url(r'^docs', include_docs_urls(
         title='User API', permission_classes=[AllowAny]
     )),
