@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'oauth2_provider',
     'rest_framework',
-    'oauth_apps',
+    'api',
+    'consumer',
 ]
 
 MIDDLEWARE = [
@@ -123,6 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+LOGIN_REDIRECT_URL = '/consumer'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -132,11 +134,7 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ),
 }
-# AUTHENCTICATION_BACKENDS = (
-#     'rest_framework_social_oauth2.backends.DjangoOAuth2',
-#     'django.contrib.auth.backends.ModelBackend',
-# )
 OAUTH2_PROVIDER = {
-    'ACCESS_TOKEN_EXPIRE_SECONDS': 60 * 60,
+    'ACCESS_TOKEN_EXPIRE_SECONDS': 60 * 6000,
     'SCOPES': {'read': 'Read scope', 'write': 'Write scope'}
 }
