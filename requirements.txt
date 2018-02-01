@@ -1,5 +1,8 @@
-Django==1.11.8
-django-oauth-toolkit==1.0.0
-djangorestframework==3.7.7
-gunicorn==19.7.1
 coreapi==2.3.3
+Django==1.11.8
+djangorestframework==3.7.7
+django-oauth-toolkit==1.0.0
+django-rest-framework-social-oauth2==1.1.0
+gunicorn==19.7.1
+social-auth-core==1.6.0
+social-auth-app-django==2.1.0
