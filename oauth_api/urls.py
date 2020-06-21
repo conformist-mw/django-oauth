@@ -17,8 +17,8 @@ urlpatterns = [
         title='User API', permission_classes=[AllowAny]
     )),
     url(r'^admin/', admin.site.urls),
-    url(r'^login/$', login, name='login'),
-    url(r'^logout/$', logout, {'next_page': '/consumer'}, name='logout'),
+    url(r'^accounts/login/$', login, name='login'),
+    url(r'^accounts/logout/$', logout, {'next_page': '/consumer'}, name='logout'),
     url(r'^api/', include(router.urls)),
     url(r'^auth/', include(
         'oauth2_provider.urls', namespace='oauth2_provider'
