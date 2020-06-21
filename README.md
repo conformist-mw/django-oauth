@@ -109,3 +109,13 @@ Hint:
 ## Documentation
 
 Simple documentation available at [docs](https://django-oauth2.herokuapp.com/)
+
+
+## Installation
+
+```bash
+cp env.example oauth_api/.env
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+```
