@@ -1,8 +1,15 @@
 import os
+import environ
+env = environ.Env(
+    DEBUG=(bool, False)
+)
+environ.Env.read_env()
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SECRET_KEY = os.getenv('SECRET_KEY')
-DEBUG = os.getenv('DEBUG') in ['1', 'True']
+
+DEBUG = env('DEBUG')
+SECRET_KEY = env('SECRET_KEY')
+
 ALLOWED_HOSTS = ['*'] if DEBUG else ['django-oauth2.herokuapp.com']
 
 INSTALLED_APPS = [
@@ -52,10 +59,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'oauth_api.wsgi.application'
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default': env.db()
 }
 
 AUTH_PASSWORD_VALIDATORS = [
