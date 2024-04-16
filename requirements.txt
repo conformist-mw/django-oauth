@@ -4,7 +4,7 @@ djangorestframework==3.11.2
 django-environ==0.4.5
 django-oauth-toolkit==1.0.0
 django-rest-framework-social-oauth2==1.1.0
-gunicorn==19.7.1
+gunicorn==22.0.0
 psycopg2-binary==2.8.5
 social-auth-core==1.6.0
 social-auth-app-django==2.1.0
