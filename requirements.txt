@@ -7,5 +7,5 @@ django-rest-framework-social-oauth2==1.1.0
 gunicorn==19.7.1
 psycopg2-binary==2.8.5
 social-auth-core==1.6.0
-social-auth-app-django==2.1.0
+social-auth-app-django==5.4.1
 whitenoise==3.3.1
